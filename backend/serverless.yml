@@ -1,0 +1,13 @@
+service: tesseract-aws-lambda
+
+provider:
+  name: aws
+  runtime: python3.10
+
+functions:
+  ocr:
+    handler: handler.ocr
+    events:
+      - http:
+          path: ocr
+          method: post
